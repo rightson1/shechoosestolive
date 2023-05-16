@@ -5,9 +5,10 @@ import Slide from "../components/Slide";
 import { Button, Grid, Typography } from "@mui/material";
 import Programs from "../components/Programs";
 import Donate from "../components/Donate";
+import Link from "next/link";
 
 const Index = ({ posts }) => {
-  const { colors } = useGlobalProvider();
+  const { colors, opened, setOpened } = useGlobalProvider();
 
   return (
     <Box className="bg-white ">
@@ -23,7 +24,7 @@ const Index = ({ posts }) => {
                 to help women live their
                 full potential
               </Typography>
-              <Button className="text-white px-10 " sx={{
+              <Button className="text-white px-10 " onClick={() => setOpened(true)} sx={{
                 backgroundColor: colors.brown[500] + " !important",
               }}>
                 JOIN US
@@ -33,12 +34,14 @@ const Index = ({ posts }) => {
               <img src="/donate.png" className="absolute top-0 h-full w-full object-cover z-[1]" alt="" />
               <div className="flex h-full w-full ">
                 <div className="flex-1 flex  items-end h-full w-full px-5">
+                  <Link href="stories">
+                    <Button className="text-white px-10 z-[3] my-5" sx={{
+                      backgroundColor: colors.greenish[500] + " !important",
+                    }}>
+                      DONATE
+                    </Button>
+                  </Link>
 
-                  <Button className="text-white px-10 z-[3] my-5" sx={{
-                    backgroundColor: colors.greenish[500] + " !important",
-                  }}>
-                    DONATE
-                  </Button>
                 </div>
                 <Box bgcolor={colors.teal[500]} className="flex-1 w-full h-full z-[4] opacity-80 p-5 md:p-10">
                   <img src="/donateIcon.svg" alt="" className="w-[70px]" />
@@ -86,17 +89,20 @@ const Index = ({ posts }) => {
 
           </div>
           <div className="flex w-full justify-center  gap-10">
-            <Button className="text-white px-10 " sx={{
+
+            <Button className="text-white px-10 " onClick={() => setOpened(true)} sx={{
               backgroundColor: colors.brown[500] + " !important",
             }}>
               JOIN US
             </Button>
-            <Button className="text-white px-10 " sx={{
-              border: `2px solid ${colors.greenish[500]}`,
-              color: colors.greenish[500] + " !important",
-            }}>
-              JOIN US
-            </Button>
+            <Link href="stories">
+              <Button className="text-white px-10 " sx={{
+                border: `2px solid ${colors.greenish[500]}`,
+                color: colors.greenish[500] + " !important",
+              }}>
+                Gallery
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -115,7 +121,7 @@ const items = [
     img: "image-1.png"
   }, {
     title1: "She is",
-    title2: "Autistic",
+    title2: "Authentic",
     img: "image-2.png"
 
   },

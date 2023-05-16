@@ -8,9 +8,9 @@ import { Link as Scroll } from "react-scroll/modules";
 import { useRouter } from "next/router";
 
 const Navbar = ({ homepage }) => {
-    const { colors, setSection } = useGlobalProvider();
+    const { colors, setSection, opened, setOpened } = useGlobalProvider();
     const [navbarColor, setNavbarColor] = useState('transparent');
-    const [opened, setOpened] = useState(false)
+
     const router = useRouter();
     const { pathname } = router;
     useEffect(() => {

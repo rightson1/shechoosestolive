@@ -26,6 +26,7 @@ export const ThemeProvider = ({ children }) => {
         }
     }, [])
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [opened, setOpened] = useState(false);
     const [section, setSection] = useState(null);
     const mode = useMemo(() => {
         return state.theme
@@ -39,6 +40,8 @@ export const ThemeProvider = ({ children }) => {
                 colors,
                 section,
                 setSection,
+                opened,
+                setOpened,
 
 
 
