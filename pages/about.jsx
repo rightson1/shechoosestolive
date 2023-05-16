@@ -3,12 +3,13 @@ import React from "react";
 import { useGlobalProvider } from "../utils/themeContext";
 import { Typography } from "@mui/material";
 import Team from "../components/Team";
+import Link from "next/link";
 
 const About = () => {
     const { colors } = useGlobalProvider();
     return <div className="">
         <Grid component={"section"} className="pt-[100px] md:pt-[150px] relative" container>
-            <img src="/about-1.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100 " alt="" />
+            <img src="/about-1.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100  xs:object-cover" alt="" />
             <Grid item xs={12} md={6} className="">
 
             </Grid>
@@ -58,12 +59,14 @@ const About = () => {
                         }}>
                             Partner with us as
                         </Button>
-                        <Button className="text-white px-10 z-[3]  w-[250px]" sx={{
-                            border: "2px solid " + colors.greenish[500] + " !important",
-                            color: colors.greenish[500] + " !important",
-                        }}>
-                            Partner with us as
-                        </Button>
+                        <Link href="stories">
+                            <Button className="text-white px-10 z-[3]  w-[250px]" sx={{
+                                border: "2px solid " + colors.greenish[500] + " !important",
+                                color: colors.greenish[500] + " !important",
+                            }}>
+                                Gallery
+                            </Button>
+                        </Link>
 
                     </div>
                 </div>
