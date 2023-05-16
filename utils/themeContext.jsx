@@ -17,6 +17,7 @@ const ThemeContext = createContext();
 
 
 export const ThemeProvider = ({ children }) => {
+
     const router = useRouter()
 
     const initialState = useMemo(() => {
@@ -25,6 +26,7 @@ export const ThemeProvider = ({ children }) => {
         }
     }, [])
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [section, setSection] = useState(null);
     const mode = useMemo(() => {
         return state.theme
     }, [state])
@@ -35,6 +37,9 @@ export const ThemeProvider = ({ children }) => {
             value={{
                 ...state,
                 colors,
+                section,
+                setSection,
+
 
 
             }}

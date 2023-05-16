@@ -12,7 +12,7 @@ module.exports = {
       aleg: ["Alegreya", "sans-serisf"],
     },
     screens: {
-      phone: { min: "100px", max: "400px" },
+      pn: { min: "100px", max: "340px" },
       llg: "1350px",
       xs: "0px",
       sm: "600px",

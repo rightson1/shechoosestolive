@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Navigation, Pagination, A11y, Autoplay, } from 'swiper';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import Scroll from "./Scroll";
 const Team = () => {
     const { colors } = useGlobalProvider();
     const swiperRef = useRef(null);
@@ -21,10 +22,11 @@ const Team = () => {
         }
     };
     return <div className="mt-20 py-10 px-5 md:px-20 bg-white">
-        <Typography className=" font-bold text-center" variant="h3" color={colors.greenish[500]}>
-            The Team
-        </Typography>
-
+        <Scroll link="team">
+            <Typography className=" font-bold text-center" variant="h3" color={colors.greenish[500]}>
+                The Team
+            </Typography>
+        </Scroll>
         <div className="flex justify-center py-5">
             <Box className="w-[95vw] md:max-w-[900px] md:p-5" sx={{
                 background: colors.white[500],
@@ -56,7 +58,7 @@ const Team = () => {
                                             </div>
                                         </Grid>
                                         <Grid item xs={12} md={6} className=" ">
-                                            <Typography className="text-start  text-[16px] font-quicksand ">
+                                            <Typography className="text-center md:text-start  text-[16px] font-quicksand ">
                                                 Anne comes with 12 plus years of
                                                 experience primarily in international
                                                 nutrition; serving in various capacities,

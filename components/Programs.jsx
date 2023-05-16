@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Navigation, Pagination, A11y, Autoplay, } from 'swiper';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import Scroll from "./Scroll";
+
 const Programs = () => {
     const { colors } = useGlobalProvider();
     const swiperRef = useRef(null);
@@ -20,11 +22,14 @@ const Programs = () => {
             swiperRef.current.swiper.slidePrev();
         }
     };
+
     return <div className="flex flex-col py-10">
-        <Typography className="text-center font-bold  text-2xl md:text-4xl py-5" color={colors.greenish[500]}>
-            Programs &
-            Services
-        </Typography>
+        <Scroll link={"programs"}>
+            <Typography className="text-center font-bold  text-2xl md:text-4xl py-5" id="programs" color={colors.greenish[500]}>
+                Programs &
+                Services
+            </Typography>
+        </Scroll>
         <div className="flex justify-center py-5">
             <div className="w-[95vw] md:max-w-[900px]">
                 <Swiper
@@ -104,7 +109,7 @@ export default Programs;
 const items = [
     {
         title: "Medical Camps",
-        paragraph: "We have a medical camp once a year to reach women, their partners, and children, offering medical care and advice."
+        paragraph: "We have a   camp once a year to reach women, their partners, and children, offering medical care and advice."
     },
     {
         title: "Talks/ Barazas",

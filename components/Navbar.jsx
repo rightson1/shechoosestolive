@@ -4,11 +4,15 @@ import { Box, Button, Modal, Typography } from "@mui/material";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Form from "./Form";
+import { Link as Scroll } from "react-scroll/modules";
+import { useRouter } from "next/router";
 
 const Navbar = ({ homepage }) => {
-    const { colors } = useGlobalProvider();
+    const { colors, setSection } = useGlobalProvider();
     const [navbarColor, setNavbarColor] = useState('transparent');
     const [opened, setOpened] = useState(false)
+    const router = useRouter();
+    const { pathname } = router;
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
@@ -27,10 +31,15 @@ const Navbar = ({ homepage }) => {
     }, []);
 
     const [open, setOpen] = React.useState(false)
-    const Item = ({ name, link }) => {
+    const Item = ({ name, link, same }) => {
         return <Link href={link}>
-            <Button className="w-full px-0" onClick={() => setOpen(false)}>
-                <Typography variant="h5" color={colors.brown[500]} className="font-[600] uppercase font-sans" >
+            <Button className="w-full px-0" onClick={() => {
+                setOpen(false)
+                !!same && setSection(same)
+            }}>
+                <Typography variant="h5" color={colors.brown[500]} className="font-[600] uppercase font-sans" sx={{
+                    color: `${!same && pathname === link ? colors.yellow[500] : colors.brown[500]} !important`
+                }} >
                     {name}
                 </Typography>
             </Button>
@@ -41,8 +50,8 @@ const Navbar = ({ homepage }) => {
         return <>
             <Item name="Home" link="/" />
             <Item name="About Us" link="/about" />
-            <Item name="PROGRAMS & SERVICES" link="/services" />
-            <Item name="THE TEAM" link="/team" />
+            <Item name="PROGRAMS & SERVICES" link="/" same="programs" />
+            <Item name="THE TEAM" link="/about" same="team" />
             <Button className="w-full px-0" onClick={() => setOpened(!opened)}>
                 <Typography variant="h5" color={colors.brown[500]} className="font-[600] uppercase font-sans" >
                     JOIN US
@@ -55,7 +64,7 @@ const Navbar = ({ homepage }) => {
 
         </>
     }
-    return <Box className="fixed flex justify-center items-center w-screen z-30 h-[80px] md:h-[150px]"
+    return <Box className="fixed flex justify-center items-center w-screen z-30 h-[80px] sm:h-[150px]"
         bgcolor={{
             xs: navbarColor,
             md: navbarColor,
@@ -86,19 +95,26 @@ const Navbar = ({ homepage }) => {
 
 
             {
-                open && <motion.div className="fixed md:hidden top-[120px] left-0 px-5  w-screen  flex justify-center items-center overflow-hidden bg-[rgba(0,0,0,.6 )]" initial="closed"
+                open && <motion.div className="fixed md:hidden  top-[120px] left-0 px-5  w-screen  flex justify-center items-center overflow-hidden bg-[rgba(0,0,0,.6 )]" initial="closed"
                     animate="open"
                     exit="closed"
                     variants={containerVariants}>
-                    <motion.div className="flex bg-[rgba(255,255,255,.8)] h-full rounded-[20px] gap-5 p-5 w-full flex-col items-center"
+                    <motion.div
+                        className="flex bg-[rgba(255,255,255,.9)] h-full rounded-[20px] gap-5 p-5 w-full flex-col items-center overflow-x-hidden"
                         variants={contentVariants}
+                        style={{ overflowY: 'auto' }} // Add this style to enable vertical scrolling
                     >
-                        <Links />
-                        <Button className="text-white  h-[60px] px-5 rounded-none w-[300px]" sx={{
-                            backgroundColor: colors.greenish[500] + " !important",
-                        }}>
-                            CONTACT US
-                        </Button>
+                        <div className="overflow-y-auto max-h-[calc(100vh-120px)] flex flex-col gap-5">
+                            <Links />
+                            <Button
+                                className="text-white h-[60px] px-5 rounded-none w-[300px]"
+                                sx={{
+                                    backgroundColor: colors.greenish[500] + ' !important',
+                                }}
+                            >
+                                CONTACT US
+                            </Button>
+                        </div>
                     </motion.div>
                 </motion.div>
 
