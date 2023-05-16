@@ -71,7 +71,9 @@ const Navbar = ({ homepage }) => {
         }}
     >
         <div className="flex px-5 justify-between w-screen   gap-1 items-center z-[20]">
-            <img src="logo.png" alt="" className=" h-[50px] md:w-[100px] md:h-[100px] " />
+            <Link href="/">
+                <img src="logo.png" alt="" className=" h-[50px] md:w-[100px] md:h-[100px] " />
+            </Link>
             <div className="hidden md:flex  bg-[rgba(255,255,255,.8)] px-5 h-[65px]  flex-1  justify-between ">
                 <Links />
             </div>
