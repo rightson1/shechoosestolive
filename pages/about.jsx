@@ -8,7 +8,7 @@ const About = () => {
     const { colors } = useGlobalProvider();
     return <div className="">
         <Grid component={"section"} className="pt-[100px] md:pt-[150px] relative" container>
-            <img src="/about-1.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100" alt="" />
+            <img src="/about-1.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100 " alt="" />
             <Grid item xs={12} md={6} className="">
 
             </Grid>

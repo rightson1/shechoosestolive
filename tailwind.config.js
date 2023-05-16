@@ -13,6 +13,7 @@ module.exports = {
     },
     screens: {
       pn: { min: "100px", max: "340px" },
+      pl: { min: "341px", max: "640px" },
       llg: "1350px",
       xs: "0px",
       sm: "600px",
@@ -23,5 +24,5 @@ module.exports = {
     },
   },
 
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
 };

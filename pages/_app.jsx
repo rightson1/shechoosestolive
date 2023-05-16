@@ -33,17 +33,17 @@ function MyApp(props) {
   return (
     <>
       <Head>
-        <title>Rightson</title>
+        <title>She Chooses To Live</title>
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
-        <meta name="description" content="Rightson Tole | Kenyan web developer living in Nairobi with expertise in Mongo db, React, Node.js, Next.js, Firebase, WordPress, and PHP" />
-        <meta name="keywords" content="Rightson Tole | Kenyan Web Developer |Kenyan Mobile developer | Next js |Firebase " />
-        <meta name="author" content="Rightson Tole" />
+        <meta name="description" content="She Chooses to Live Initiative (SCTLI) is a non-profit organization whose primary focus is to empower communities through advocacy and implementation of health ..." />
+        {/* <meta name="keywords" content="Rightson Tole | Kenyan Web Developer |Kenyan Mobile developer | Next js |Firebase " /> */}
+        {/* <meta name="author" content="Rightson Tole" /> */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:url" content="https://rightson.vercel.app/logo.png" />
-        <meta property="og:image" content=" https://rightson.vercel.app/logo.png" />
+        <meta property="og:url" content="https://shechoosestolive.vercel.app/logo.png" />
+        <meta property="og:image" content=" https://shechoosestolive.vercel.app/logo.png" />
         <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

@@ -75,11 +75,13 @@ const Navbar = ({ homepage }) => {
             <div className="hidden md:flex  bg-[rgba(255,255,255,.8)] px-5 h-[65px]  flex-1  justify-between ">
                 <Links />
             </div>
-            <Button className="text-white  h-[65px] w-[150px] px-5 rounded-none hidden md:flex" sx={{
-                backgroundColor: colors.greenish[500] + " !important",
-            }}>
-                CONTACT US
-            </Button>
+            <Link href="/contact">
+                <Button className="text-white  h-[65px] w-[150px] px-5 rounded-none hidden md:flex" sx={{
+                    backgroundColor: colors.greenish[500] + " !important",
+                }}>
+                    CONTACT US
+                </Button>
+            </Link>
             <Button onClick={() => setOpen(!open)} className="flex  md:hidden flex-col gap-[6px] px-0 py-[10px] opacity-70" sx={{
                 border: homepage ? "1px solid white" : "1px solid black",
             }}>
@@ -95,25 +97,26 @@ const Navbar = ({ homepage }) => {
 
 
             {
-                open && <motion.div className="fixed md:hidden  top-[120px] left-0 px-5  w-screen  flex justify-center items-center overflow-hidden bg-[rgba(0,0,0,.6 )]" initial="closed"
+                open && <motion.div className="fixed md:hidden pn:top-[70px] top-[120px] left-0 px-5  w-screen  flex justify-center items-center overflow-hidden bg-[rgba(0,0,0,.6 )]" initial="closed"
                     animate="open"
                     exit="closed"
                     variants={containerVariants}>
                     <motion.div
-                        className="flex bg-[rgba(255,255,255,.9)] h-full rounded-[20px] gap-5 p-5 w-full flex-col items-center overflow-x-hidden"
-                        variants={contentVariants}
-                        style={{ overflowY: 'auto' }} // Add this style to enable vertical scrolling
+                        className="flex bg-[rgba(255,255,255,.9)] h-full rounded-[20px] gap-5 p-5 w-full flex-col items-center overflow-x-hidden pn:overflow-y-auto  scrollbar-none"
+                        variants={contentVariants} // Add this style to enable vertical scrolling
                     >
-                        <div className="overflow-y-auto max-h-[calc(100vh-120px)] flex flex-col gap-5">
+                        <div className="pn:overflow-y-auto  pn:max-h-[calc(100vh-120px)] flex flex-col pn:gap-3 gap-5 items-center">
                             <Links />
-                            <Button
-                                className="text-white h-[60px] px-5 rounded-none w-[300px]"
-                                sx={{
-                                    backgroundColor: colors.greenish[500] + ' !important',
-                                }}
-                            >
-                                CONTACT US
-                            </Button>
+                            <Link href="contact">
+                                <Button
+                                    className="text-white p-2 w-[150px] rounded-none"
+                                    sx={{
+                                        backgroundColor: colors.greenish[500] + ' !important',
+                                    }}
+                                >
+                                    CONTACT US
+                                </Button>
+                            </Link>
                         </div>
                     </motion.div>
                 </motion.div>

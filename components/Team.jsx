@@ -29,7 +29,10 @@ const Team = () => {
         </Scroll>
         <div className="flex justify-center py-5">
             <Box className="w-[95vw] md:max-w-[900px] md:p-5" sx={{
-                background: colors.white[500],
+                background: {
+                    xs: undefined,
+                    md: colors.white[500],
+                },
             }}>
                 <Swiper
                     modules={[Navigation, Pagination, A11y, Autoplay]}
