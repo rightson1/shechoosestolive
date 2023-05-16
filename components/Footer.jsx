@@ -98,7 +98,7 @@ const Footer = () => {
                 </Typography>
                 <div className="flex gap-5 justify-center ">
                     <Typography variant='h5' className='font-semibold'>
-                        Doctor's Plaza Nairobi Hospital,
+                        Doctor &apos; Plaza Nairobi Hospital,
                         RM 211 49-00202, Nairobi
                     </Typography>
                 </div>
