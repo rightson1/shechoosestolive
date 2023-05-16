@@ -34,7 +34,7 @@ const Index = ({ posts }) => {
               <img src="/donate.png" className="absolute top-0 h-full w-full object-cover z-[1]" alt="" />
               <div className="flex h-full w-full ">
                 <div className="flex-1 flex  items-end h-full w-full px-5">
-                  <Link href="stories">
+                  <Link href="/donate">
                     <Button className="text-white px-10 z-[3] my-5" sx={{
                       backgroundColor: colors.greenish[500] + " !important",
                     }}>
@@ -95,7 +95,7 @@ const Index = ({ posts }) => {
             }}>
               JOIN US
             </Button>
-            <Link href="stories">
+            <Link href="/stories">
               <Button className="text-white px-10 " sx={{
                 border: `2px solid ${colors.greenish[500]}`,
                 color: colors.greenish[500] + " !important",
