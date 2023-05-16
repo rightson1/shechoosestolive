@@ -124,7 +124,7 @@ const Footer = () => {
                     Visit us
                 </Typography>
                 <div className="flex gap-5 justify-center ">
-                    <Typography variant='h5' className='font-semibold'>
+                    <Typography variant='h5' className='md:font-semibold '>
                         Doctor &apos; Plaza Nairobi Hospital,
                         RM 211 49-00202, Nairobi
                     </Typography>
