@@ -40,7 +40,7 @@ const About = () => {
         </Grid>
         <Team />
         <Grid component={"section"} className="mt-20 relative" container>
-            <img src="/about-2.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100 " alt="" />
+            <img src="/about-2.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100  object-cover object-right md:object-center" alt="" />
             <Grid item xs={12} md={6} className="p-5 flex flex-col gap-5 z-[3] items-center md:items-end">
                 <div className="flex flex-col md:w-[300px] gap-10 py-5">
                     <Typography className=" font-bold  text-center md:text-start" variant="h2" color={colors.brown[500]}>
