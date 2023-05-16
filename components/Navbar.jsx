@@ -52,7 +52,7 @@ const Navbar = () => {
             border: "1px solid white",
         }}>
             {
-                ["", "", ""].map((item, index) => (<span className=" w-[35px] h-[3px] rounded bg-white "></span>))
+                ["", "", ""].map((item, index) => (<span className=" w-[35px] h-[3px] rounded bg-white " key={index}></span>))
             }
 
         </Button>
