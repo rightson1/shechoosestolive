@@ -25,8 +25,23 @@ const Footer = () => {
         </Link>
     }
 
-    return <Box className="pt-10 " bgcolor={colors.white[500]}>
-        <Grid container className="p-5 md:px-[70px]" spacing={5}>
+    return <Box className="pt-10 " >
+        <div className="py-[100px] flex justify-center items-center">
+            <div className="flex flex-col max-w-[500px] px-5">
+                <Typography className="text-center font-bold text-xl " variant="h5" >
+                    Subscribe to our Newsletter and stay in the
+                    loop of our latest News and Updates
+                </Typography>
+                <input type="text" className="border-2 border-[#E5E5E5] rounded-md px-5 py-2 my-5" placeholder="Enter your email address" />
+                <Button className="text-white px-10 " sx={{
+                    border: "2px solid" + colors.greenish[500] + " !important",
+                    color: colors.greenish[500] + " !important",
+                }}>
+                    SUBSCRIBE
+                </Button>
+            </div>
+        </div>
+        <Grid container className="p-5 md:px-[70px]" spacing={5} bgcolor={colors.white[500]}>
             <Grid item xs={12} md={2} className="flex flex-col gap-2">
                 <Typography className="text-center font-bold md:text-start" variant="h3" color={colors.greenish[500]}>
                     Quick Links
@@ -53,16 +68,16 @@ const Footer = () => {
                 </Typography>
                 <div className="flex gap-5 justify-center md:justify-start ">
                     <Social link="https://www.facebook.com/shechosestolive" icon={<FacebookIcon sx={{
-                        color: colors.greenish[500]
+                        color: colors.brown[500]
                     }} />} />
                     <Social link="https://www.instagram.com/shechosestolive/" icon={<InstagramIcon sx={{
-                        color: colors.greenish[500]
+                        color: colors.brown[500]
                     }} />} />
                     <Social link="https://twitter.com/shechosestolive" icon={<TwitterIcon sx={{
-                        color: colors.greenish[500]
+                        color: colors.brown[500]
                     }} />} />
                     <Social link="https://www.linkedin.com/company/she-chose-to-live/" icon={<LinkedInIcon sx={{
-                        color: colors.greenish[500]
+                        color: colors.brown[500]
                     }} />} />
                 </div>
             </Grid>
@@ -73,7 +88,7 @@ const Footer = () => {
                 <div className="flex gap-5 justify-center  flex-col">
                     <div className="flex justify-center items-center gap-3 md:justify-start">
                         <PhoneIcon sx={{
-                            color: colors.greenish[500]
+                            color: colors.brown[500]
                         }} />
 
                         <Typography className="text-center md:text-start" variant="h5">
@@ -82,7 +97,7 @@ const Footer = () => {
                     </div>
                     <div className="flex justify-center items-center gap-3 md:justify-start">
                         <EmailIcon sx={{
-                            color: colors.greenish[500]
+                            color: colors.brown[500]
                         }} />
 
                         <Typography className="text-center md:text-start" variant="h5">
@@ -105,7 +120,7 @@ const Footer = () => {
             </Grid>
         </Grid>
         <Box className="flex justify-center items-center py-2" bgcolor={colors.greenish[500]}>
-            <Typography className="font-jost text-[14px] md:text-[19px] text-start opacity-70 text-white">
+            <Typography className="font-jost text-[14px] md:text-[19px]   text-white text-center">
                 © Copyright 2023. All Rights Reserved By She Choses To Live Initiative.
             </Typography>
         </Box>

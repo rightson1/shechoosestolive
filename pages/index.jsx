@@ -102,21 +102,7 @@ const Index = ({ posts }) => {
       </div>
       <Programs />
       <Donate />
-      <div className="py-[50px] flex justify-center items-center">
-        <div className="flex flex-col max-w-[500px] px-5">
-          <Typography className="text-center font-bold text-xl " variant="h5" >
-            Subscribe to our Newsletter and stay in the
-            loop of our latest News and Updates
-          </Typography>
-          <input type="text" className="border-2 border-[#E5E5E5] rounded-md px-5 py-2 my-5" placeholder="Enter your email address" />
-          <Button className="text-white px-10 " sx={{
-            border: "2px solid" + colors.greenish[500] + " !important",
-            color: colors.greenish[500] + " !important",
-          }}>
-            SUBSCRIBE
-          </Button>
-        </div>
-      </div>
+
 
     </Box>
   )
@@ -140,4 +126,5 @@ const items = [
   }
 
 ]
+Index.homepage = true;
 export default Index;
