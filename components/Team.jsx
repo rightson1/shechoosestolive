@@ -20,33 +20,28 @@ const Team = () => {
             swiperRef.current.swiper.slidePrev();
         }
     };
-    return <div className="mt-20 py-10 px-5 md:px-20">
+    return <div className="mt-20 py-10 px-5 md:px-20 bg-white">
         <Typography className=" font-bold text-center" variant="h3" color={colors.greenish[500]}>
             The Team
         </Typography>
+
         <div className="flex justify-center py-5">
-            <div className="w-[95vw] md:max-w-[900px]">
+            <Box className="w-[95vw] md:max-w-[900px] md:p-5" sx={{
+                background: colors.white[500],
+            }}>
                 <Swiper
-                    ref={swiperRef}
-
                     modules={[Navigation, Pagination, A11y, Autoplay]}
-                    autoplay={{
-                        delay: 10000,
+                    autoplay={{ delay: 50000 }}
 
-                        disableOnInteraction: false
-                    }}
-                    slidesPerView={1}
                 >
                     {
                         items.map((item, index) => {
                             const { title, paragraph } = item
                             return (
                                 <SwiperSlide key={index}>
-                                    <Grid container className="p-2 md:p-5 rounded-md" spacing={{ xs: 5, md: 1 }} sx={{
-                                        background: colors.white[500],
-                                    }}>
-                                        <Grid item xs={12} md={6} className=" flex justify-center ">
-                                            <div className="flex max-w-[400px] flex-col">
+                                    <Grid container className=" rounded-md p-5 bg-white" >
+                                        <Grid item xs={12} md={6} className=" flex justify-center  w-full">
+                                            <div className="flex max-w-[400px] flex-col w-full">
                                                 <img src="/profile-1.png" alt="" className="h-[450px] object-cover" />
                                                 <Box bgcolor={colors.brown[500]} className="p-2 flex justify-center flex-col gap-3 items-center">
                                                     <Typography className="text-white font-[600]">
@@ -60,7 +55,7 @@ const Team = () => {
                                                 </Box>
                                             </div>
                                         </Grid>
-                                        <Grid item xs={12} md={6} className="flex flex-col justify-center items-center md:items-end gap-5   ">
+                                        <Grid item xs={12} md={6} className=" ">
                                             <Typography className="text-start  text-[16px] font-quicksand ">
                                                 Anne comes with 12 plus years of
                                                 experience primarily in international
@@ -110,7 +105,7 @@ const Team = () => {
                         )
                     }
                 </Swiper>
-                <div className="flex justify-center pt-10 gap-5">
+                <div className="flex justify-center pt-10 gap-5 ">
                     <Box onClick={handlePrevSlide} border={`2px solid ${colors.brown[500]}`} className="rounded-full w-[30px] h-[30px] flex items-center justify-center">
                         <KeyboardBackspaceIcon className=" cursor-pointer" sx={{
                             color: colors.brown[500] + " !important"
@@ -122,7 +117,7 @@ const Team = () => {
                         }} />
                     </Box>
                 </div>
-            </div>
+            </Box>
         </div>
     </div>;
 };

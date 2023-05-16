@@ -7,17 +7,17 @@ import Team from "../components/Team";
 const About = () => {
     const { colors } = useGlobalProvider();
     return <div className="">
-        <Grid component={"section"} className="pt-[150px] relative" container>
+        <Grid component={"section"} className="pt-[100px] md:pt-[150px] relative" container>
             <img src="/about-1.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100" alt="" />
             <Grid item xs={12} md={6} className="">
 
             </Grid>
             <Grid item xs={12} md={6} className="p-5 flex flex-col gap-5 z-[3]">
-                <Typography className=" font-bold md:text-start" variant="h2" color={colors.greenish[500]}>
+                <Typography className=" font-bold text-center md:text-start " variant="h2" color={colors.greenish[500]}>
                     About Us
                 </Typography>
                 <div className="flex flex-col md:max-w-[450px] gap-10">
-                    <Typography className="text-start  text-[18px] font-quicksand ">
+                    <Typography className=" text-center md:text-start  text-[18px] font-quicksand ">
                         At SCTLI we want to see every woman prioritize her health.
                         Thus, we are about developing platforms where women can
                         freely discuss what is happening with their bodies and get
@@ -25,7 +25,7 @@ const About = () => {
                         partner with men in this endeavor knowing that they play a
                         crucial role in ensuring womens well-being.
                     </Typography>
-                    <Typography className="text-start  text-[18px] font-quicksand">
+                    <Typography className="text-center md:text-start text-[18px] font-quicksand">
                         Typically, women place their own health at the bottom of
                         their list of priorities focusing mainly on their families.
                         As a result, they present themselves for treatment late making
@@ -42,17 +42,17 @@ const About = () => {
             <img src="/about-2.png" className="absolute top-0 left-0 w-full z-[-1] h-full opacity-20 md:opacity-100 " alt="" />
             <Grid item xs={12} md={6} className="p-5 flex flex-col gap-5 z-[3] items-center md:items-end">
                 <div className="flex flex-col md:w-[300px] gap-10 py-5">
-                    <Typography className=" font-bold " variant="h2" color={colors.brown[500]}>
+                    <Typography className=" font-bold  text-center md:text-start" variant="h2" color={colors.brown[500]}>
                         Join Us
                     </Typography>
-                    <Typography className="text-start  text-[18px] font-quicksand">
+                    <Typography className="  text-[18px] font-quicksand text-center md:text-start">
                         The mission of She Chooses to Live Initiative (SCTLI) can only
                         be achieved through communal effort. You can join us as a
                         volunteer, advisor, expert contributor, among others. There
                         is room for you, and we would love to hear from you. Please
                         get in touch with us through the contacts below
                     </Typography>
-                    <div className="flex flex-col  gap-2">
+                    <div className="flex flex-col  gap-2 items-center md:items-start">
                         <Button className="text-white px-10 z-[3]  w-[250px] " sx={{
                             backgroundColor: colors.greenish[500] + " !important",
                         }}>

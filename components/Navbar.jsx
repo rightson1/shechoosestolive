@@ -3,10 +3,12 @@ import { useGlobalProvider } from "../utils/themeContext";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Form from "./Form";
 
 const Navbar = ({ homepage }) => {
     const { colors } = useGlobalProvider();
     const [navbarColor, setNavbarColor] = useState('transparent');
+    const [opened, setOpened] = useState(false)
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
@@ -27,7 +29,7 @@ const Navbar = ({ homepage }) => {
     const [open, setOpen] = React.useState(false)
     const Item = ({ name, link }) => {
         return <Link href={link}>
-            <Button className="w-full px-0">
+            <Button className="w-full px-0" onClick={() => setOpen(false)}>
                 <Typography variant="h5" color={colors.brown[500]} className="font-[600] uppercase font-sans" >
                     {name}
                 </Typography>
@@ -41,6 +43,11 @@ const Navbar = ({ homepage }) => {
             <Item name="About Us" link="/about" />
             <Item name="PROGRAMS & SERVICES" link="/services" />
             <Item name="THE TEAM" link="/team" />
+            <Button className="w-full px-0" onClick={() => setOpened(!opened)}>
+                <Typography variant="h5" color={colors.brown[500]} className="font-[600] uppercase font-sans" >
+                    JOIN US
+                </Typography>
+            </Button>
             <Item name="DONATE" link="/donate" />
             <Item name="SUCCESSS STRORIES" link="/stories" />
             <Item name="NEWS / BLOGS" link="/blogs" />
@@ -97,6 +104,7 @@ const Navbar = ({ homepage }) => {
 
             }
         </div>
+        <Form open={opened} setOpen={setOpened} />
     </Box>
 };
 
