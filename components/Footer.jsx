@@ -67,7 +67,19 @@ const Footer = () => {
                     Engage us
                 </Typography>
                 <div className="flex gap-5 justify-center md:justify-start ">
-                    <Social link="https://www.facebook.com/shechosestolive" icon={<FacebookIcon sx={{
+                    <FacebookIcon sx={{
+                        color: colors.brown[500]
+                    }} />
+                    <InstagramIcon sx={{
+                        color: colors.brown[500]
+                    }} />
+                    <TwitterIcon sx={{
+                        color: colors.brown[500]
+                    }} />
+                    <LinkedInIcon sx={{
+                        color: colors.brown[500]
+                    }} />
+                    {/* <Social link="https://www.facebook.com/shechosestolive" icon={<FacebookIcon sx={{
                         color: colors.brown[500]
                     }} />} />
                     <Social link="https://www.instagram.com/shechosestolive/" icon={<InstagramIcon sx={{
@@ -78,7 +90,7 @@ const Footer = () => {
                     }} />} />
                     <Social link="https://www.linkedin.com/company/she-chose-to-live/" icon={<LinkedInIcon sx={{
                         color: colors.brown[500]
-                    }} />} />
+                    }} />} /> */}
                 </div>
             </Grid>
             <Grid item xs={12} md={3} className="flex flex-col gap-5">

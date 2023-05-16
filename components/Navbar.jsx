@@ -76,7 +76,7 @@ const Navbar = ({ homepage }) => {
                 <Links />
             </div>
             <Link href="/contact">
-                <Button className="text-white  h-[65px] w-[150px] px-5 rounded-none hidden md:flex" sx={{
+                <Button className="text-white  h-[65px] w-[150px] px-5 rounded-none hidden md:flex" onClick={() => setOpen(false)} sx={{
                     backgroundColor: colors.greenish[500] + " !important",
                 }}>
                     CONTACT US
@@ -109,6 +109,7 @@ const Navbar = ({ homepage }) => {
                             <Links />
                             <Link href="contact">
                                 <Button
+                                    onClick={() => setOpen(false)}
                                     className="text-white p-2 w-[150px] rounded-none"
                                     sx={{
                                         backgroundColor: colors.greenish[500] + ' !important',

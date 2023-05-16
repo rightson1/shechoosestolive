@@ -59,7 +59,7 @@ const Programs = () => {
                                     }}>
                                         <Grid item xs={12} md={6} className="flex flex-col justify-center items-center md:items-end gap-5  ">
                                             <Typography variant="h5" color={colors.brown[500]} className="font-[500] uppercase text-center md:text-end" >
-                                                {'0.' + index}
+                                                {'0.' + index + 1}
                                             </Typography>
                                             <Typography variant="h3" color={colors.brown[500]} className="font-[600] uppercase text-center md:text-end" >
                                                 {title}
