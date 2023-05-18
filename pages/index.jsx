@@ -90,7 +90,7 @@ const Index = ({ posts }) => {
           </div>
           <div className="flex w-full justify-center  gap-10 relative">
             <Link href="/donate">
-              <Box className="absolute h-[150px] w-[150px] -right-20 top-10 md:-right-10 hover:right-5 transition-all duration-500 cursor-pointer flex justify-center items-center p-5"
+              <Box className="absolute h-[100px] w-[100px] md:h-[150px] md:w-[150px] -right-1 top-10 md:-right-10 hover:right-5 transition-all duration-500 cursor-pointer flex justify-center items-center p-4 md:p-5"
                 sx={{
                   backgroundImage: `url('/button.png')`,
                   backgroundRepeat: "no-repeat",
@@ -103,7 +103,7 @@ const Index = ({ posts }) => {
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
                 }}>
-                  <Typography className="text-white">   DONATE</Typography>
+                  <Typography className="text-white text-[14px]">   DONATE</Typography>
                 </Box>
               </Box>
             </Link>
