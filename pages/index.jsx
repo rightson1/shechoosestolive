@@ -88,8 +88,25 @@ const Index = ({ posts }) => {
             </div>
 
           </div>
-          <div className="flex w-full justify-center  gap-10">
+          <div className="flex w-full justify-center  gap-10 relative">
+            <Link href="/donate">
+              <Box className="absolute h-[150px] w-[150px] -right-20 top-10 md:-right-10 hover:right-5 transition-all duration-500 cursor-pointer flex justify-center items-center p-5"
+                sx={{
+                  backgroundImage: `url('/button.png')`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                }}
 
+              >
+                <Box className=" h-full w-full  shadow-lg rounded-full flex justify-center items-center" sx={{
+                  backgroundImage: `url('/button.png')`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                }}>
+                  <Typography className="text-white">   DONATE</Typography>
+                </Box>
+              </Box>
+            </Link>
             <Button className="text-white px-10 " onClick={() => setOpened(true)} sx={{
               backgroundColor: colors.brown[500] + " !important",
             }}>
